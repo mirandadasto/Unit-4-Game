@@ -1,3 +1,35 @@
 body {
     background-image: url("../images/dimension_@2X.png");
 }
+
+h1{
+    background-color: orangered;
+    color:white;
+    /* Make smaller block so doesn't extend all the way across the page */
+}
+
+.gameInstructions .p{
+    background-color: tan;
+    color: green;
+    /* Make smaller block so doesn't extend all the way across the page */
+
+}
+
+.randomlyGeneratedNumber {
+    background-color: rgb(97, 201, 137);
+    color: rgb(67, 6, 107);
+}
+
+.winsAndLosses{
+    background-color: turquoise;
+}
+
+.img{
+
+}
+
+.totalScoreVerbiage .totalScore{
+    background-color: teal;
+    color: white;
+}
+
