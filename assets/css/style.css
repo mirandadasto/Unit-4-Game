@@ -2,34 +2,66 @@ body {
     background-image: url("../images/dimension_@2X.png");
 }
 
-h1{
-    background-color: orangered;
+#title {
+    background-color: orange; 
     color:white;
-    /* Make smaller block so doesn't extend all the way across the page */
+    padding: 15px;
+    float: left;
+    margin: 10px;
 }
 
-.gameInstructions .p{
-    background-color: tan;
-    color: green;
-    /* Make smaller block so doesn't extend all the way across the page */
-
+#gameInstructions {
+    background-color: rgb(252, 248, 213);
+    color: rgb(74, 189, 74);
+    float: left;
+    margin: 10px;
+    padding: 20px 5px 100px 5px;
+    font-weight: bolder;
 }
 
-.randomlyGeneratedNumber {
+#randomlyGeneratedNumber {
     background-color: rgb(97, 201, 137);
     color: rgb(67, 6, 107);
+    Padding: 5px 200px 80px 5px;
+    margin: 10px;
+    font-size: 40px;
 }
 
-.winsAndLosses{
+#winsAndLosses {
     background-color: turquoise;
-}
-
-.img{
+    padding: 5px 10px 100px 10px;
 
 }
 
-.totalScoreVerbiage .totalScore{
+img {
+    display: block;
+    width: 10%;
+    float: left;
+    margin: 5px;
+}
+
+#totalScoreVerbiage {
     background-color: teal;
     color: white;
+    padding: 0px 10px 0px 10px;
+    margin: 10px;
+}
+
+#totalScore {
+    margin: 10px;
+    background-color: teal;
+    color: white;
+    Padding: 5px 200px 80px 5px; 
+    font-size: 40px;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 

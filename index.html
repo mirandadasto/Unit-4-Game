@@ -11,50 +11,74 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="assets/javascript/game.js"></script>
 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 <body>
 
-    <h1>Crystals Collector!</h1>
-
-    <div id = "gameInstructions">
-        <p>
-            You will be given a random number at the start of the game.
-            <br>
-            There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.
-            <br>
-            You win the game by matching your total score to the random number, you lose the game if your total score goes above the random number.
-            <br>
-            The value of each crystal is hidden from you until you click on it.
-            <br>
-            Each time when the game starts, the game will change the values of each crystal.
-        </p>    
+    <div class = "clearfix">
+        <h1 id = "title">Crystals Collector!</h1>
     </div>
 
-    <label id = "randomlyGeneratedNumber">
-        Number Here
-    </label>
-
-    <label id = "winsAndLosses">
-        Wins: 0
-        Losses: 0
-    </label>
-
-    <div id = "imagesOfJewels">
-        <img src="assets/images/pinkJewel.png" alt="Photo of pink jewel">
-        <img src="assets/images/greenJewel.png" alt="Photo of green jewel">
-        <img src="assets/images/yellowJewel.png" alt="Photo of yellow jewel">
-        <img src="assets/images/purpleJewel.png" alt="Photo of purple jewel">
+    <div class = "clearfix">
+        <div id = "gameInstructions">
+                You will be given a random number at the start of the game.
+                <br><br>
+                There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.
+                <br><br>
+                You win the game by matching your total score to the random number, you lose the game if your total score goes above the random number.
+                <br><br>
+                The value of each crystal is hidden from you until you click on it.
+                <br><br>
+                Each time when the game starts, the game will change the values of each crystal.
+        </div>
     </div>
 
-    <label id = "totalScoreVerbiage">
-        <p>
-            Your total score is:
-        </p>
-    </label>
+<!-- TODO: Make randomlyGeneratedNumber level with winsAndLosses -->
+    <div class = "clearfix">
+        <label id = "randomlyGeneratedNumber">
+            
+        </label>
 
-    <label id = "totalscore">
-        aNumberHere
-    </label>
-    
+        <label id = "winsAndLosses">
+            Wins: 0
+            Losses: 0
+        </label>
+    </div>
+
+    <div class = "clearfix">
+        <img id = "crystalOneImage" src="assets/images/pinkJewel.png" alt="Photo of pink jewel">
+        <label id = "crystalOneLabel">
+            1
+        </label>
+
+        <img id = "crystalTwoImage" src="assets/images/greenJewel.png" alt="Photo of green jewel">
+        <label id = "crystalTwoLabel">
+            2
+        </label>
+
+        <img id = "crystalThreeImage" src="assets/images/yellowJewel.png" alt="Photo of yellow jewel">
+        <label id = "crystalThreeLabel">
+            3
+        </label>
+
+        <img id = "crystalFourImage" src="assets/images/purpleJewel.png" alt="Photo of purple jewel">
+        <label id = "crystalFourLabel">
+            4
+        </label>
+    </div>
+
+    <div class = "clearfix">
+        <label id = "totalScoreVerbiage">
+                Your total score is:
+        </label>
+    </div>
+
+    <div class = "clearfix">
+        <label id = "totalScore">
+            0
+        </label>
+    </div>
+
 </body>
 </html>
