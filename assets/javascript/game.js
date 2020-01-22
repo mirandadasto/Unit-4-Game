@@ -1,69 +1,110 @@
-var randomlyGeneratedNumber = 0;
+var targetNumber = 0;
 var wins = 0;
 var losses = 0;
-var yourTotalScore = 0;
 
 window.onload = function()
 {
-    $("#randomlyGeneratedNumber").text(generateRandomNumber());
-    this.generateCrystalValues();
+    createNewGame();
+    displayTotalScore();
 }
 
-function generateRandomNumber()
+function generateRandomNumberForTargetNumber()
 {
-    return Math.ceil(Math.random() * 100);
+    return Math.ceil(Math.random() * 200);
+}
+
+function generateRandomNumberForCrystal()
+{
+    return Math.ceil(Math.random() * 50);
 }
 
 class Crystal{
 
-    constructor(activated, image, label)
+    constructor(activations, image, label)
     {
-        this.activated = activated;
+        this.activations = activations;
         this.image = image;
         this.label = label;
+        this.randomNumber = generateRandomNumberForCrystal();
     }
 }
 
-var crystals = [ new Crystal(false, "#crystalOneImage", "#crystalOneLabel"),
-        new Crystal(false, "#crystalTwoImage", "#crystalTwoLabel"),
-        new Crystal(false, "#crystalThreeImage", "#crystalThreeLabel"),
-        new Crystal(false, "#crystalFourImage", "#crystalFourLabel")]
+var crystals = [];
 
 function generateCrystalValues()
 {
+        crystals = [ new Crystal(0, "#crystalOneImage", "#crystalOneLabel"),
+        new Crystal(0, "#crystalTwoImage", "#crystalTwoLabel"),
+        new Crystal(0, "#crystalThreeImage", "#crystalThreeLabel"),
+        new Crystal(0, "#crystalFourImage", "#crystalFourLabel")];
+
         $("body").on("click", crystals[0].image, function()
         {
-            if (crystals[0].activated == false)
-            {
-                $(crystals[0].label).text(generateRandomNumber());
-                crystals[0].activated = true;
-            }
+            $(crystals[0].label).text(crystals[0].randomNumber);
+            crystals[0].activations++;
         })
-
         $("body").on("click", crystals[1].image, function()
         {
-            if (crystals[1].activated == false)
-            {
-                $(crystals[1].label).text(generateRandomNumber());
-                crystals[1].activated = true;
-            }
+            $(crystals[1].label).text(crystals[1].randomNumber);
+            crystals[1].activations++;
         })
-
         $("body").on("click", crystals[2].image, function()
         {
-            if (crystals[2].activated == false)
-            {
-                $(crystals[2].label).text(generateRandomNumber());
-                crystals[2].activated = true;
-            }
+            $(crystals[2].label).text(crystals[2].randomNumber);
+            crystals[2].activations++;
         })
-
         $("body").on("click", crystals[3].image, function()
         {
-            if (crystals[3].activated == false)
-            {
-                $(crystals[3].label).text(generateRandomNumber());
-                crystals[3].activated = true;
-            }
+            $(crystals[3].label).text(crystals[3].randomNumber);
+            crystals[3].activations++;
         })
+}
+
+function displayTotalScore()
+{
+    $("body").on("click", "img", function()
+    {
+        totalScore = 0;
+        for(var i = 0; i < crystals.length; i++)
+        {
+            totalScore += (crystals[i].randomNumber * crystals[i].activations);
+        }
+        $(totalScoreLabel).text(totalScore);
+        determineVictoryStatus();
+    })
+}
+
+function determineVictoryStatus()
+{
+    if(totalScore > targetNumber)
+    {
+        alert("You are a disappointment to all of the maternal figures in your life.")
+        losses++
+        $(lossesLabel).text(losses);
+        createNewGame();
+    }
+    else if(totalScore == targetNumber)
+    {
+        alert("You have won against all odds. Congratulations, peasant.")
+        wins++
+        $(winsLabel).text(wins);
+        createNewGame();
+    }
+}
+
+function createNewGame()
+{
+    targetNumber = generateRandomNumberForTargetNumber();
+    $("#randomlyGeneratedNumber").text(targetNumber);
+
+    generateCrystalValues();
+    $(crystals[0].label).text("");
+    $(crystals[1].label).text("");
+    $(crystals[2].label).text("");
+    $(crystals[3].label).text("");
+    
+
+
+    totalScore = 0;
+    $(totalScoreLabel).text(totalScore);
 }

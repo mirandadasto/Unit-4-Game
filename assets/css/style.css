@@ -22,14 +22,14 @@ body {
 #randomlyGeneratedNumber {
     background-color: rgb(97, 201, 137);
     color: rgb(67, 6, 107);
-    Padding: 5px 200px 80px 5px;
+    Padding: 34px 200px 73px 5px;
     margin: 10px;
     font-size: 40px;
 }
 
 #winsAndLosses {
     background-color: turquoise;
-    padding: 5px 10px 100px 10px;
+    padding: 5px 10px 75px 10px;
 
 }
 
@@ -47,12 +47,29 @@ img {
     margin: 10px;
 }
 
-#totalScore {
+#totalScoreLabel {
     margin: 10px;
     background-color: teal;
     color: white;
     Padding: 5px 200px 80px 5px; 
     font-size: 40px;
+}
+
+#crystalOneLabel{
+    font-size: 40px;
+    color: rgb(240, 8, 124);
+}
+#crystalTwoLabel{
+    font-size: 40px;
+    color: rgb(8, 240, 66);
+}
+#crystalThreeLabel{
+    font-size: 40px;
+    color: rgb(184, 181, 24);
+}
+#crystalFourLabel{
+    font-size: 40px;
+    color: rgb(186, 8, 240);
 }
 
 .clearfix {
